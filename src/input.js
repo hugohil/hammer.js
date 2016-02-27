@@ -97,10 +97,10 @@ function createInputInstance(manager) {
         Type = PointerEventInput;
     } else if (SUPPORT_ONLY_TOUCH) {
         Type = TouchInput;
-    } else if (!SUPPORT_TOUCH) {
-        Type = MouseInput;
+    // } else if (!SUPPORT_TOUCH) {
+    //     Type = MouseInput;
     } else {
-        Type = TouchMouseInput;
+        Type = TouchInput;
     }
     return new (Type)(manager, inputHandler);
 }

@@ -1,7 +1,7 @@
-/*! Hammer.JS - v2.0.6 - 2015-12-23
+/*! Hammer.JS - v2.0.6 - 2016-02-27
  * http://hammerjs.github.io/
  *
- * Copyright (c) 2015 Jorik Tangelder;
+ * Copyright (c) 2016 Jorik Tangelder;
  * Licensed under the  license */
 (function(window, document, exportName, undefined) {
   'use strict';
@@ -130,7 +130,7 @@ if (typeof Object.assign !== 'function') {
  * means that properties in dest will be overwritten by the ones in src.
  * @param {Object} dest
  * @param {Object} src
- * @param {Boolean=false} [merge]
+ * @param {Boolean} [merge=false]
  * @returns {Object} dest
  */
 var extend = deprecate(function extend(dest, src, merge) {
@@ -477,10 +477,10 @@ function createInputInstance(manager) {
         Type = PointerEventInput;
     } else if (SUPPORT_ONLY_TOUCH) {
         Type = TouchInput;
-    } else if (!SUPPORT_TOUCH) {
-        Type = MouseInput;
+    // } else if (!SUPPORT_TOUCH) {
+    //     Type = MouseInput;
     } else {
-        Type = TouchMouseInput;
+        Type = TouchInput;
     }
     return new (Type)(manager, inputHandler);
 }
